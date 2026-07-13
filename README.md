@@ -90,7 +90,13 @@ npm run dev              # or: make front
 
 ### Environment variables
 
-Compose sets these for you; for local runs configure them yourself:
+Compose sets these for you. For local runs, copy the provided templates
+(real `.env` files are git‑ignored so secrets never get committed):
+
+```bash
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+```
 
 | Variable        | Used by  | Default / example                                       |
 |-----------------|----------|---------------------------------------------------------|
@@ -99,12 +105,8 @@ Compose sets these for you; for local runs configure them yourself:
 | `SECRET_KEY`    | backend  | `debug_challenge_secret`                                |
 | `VITE_API_URL`  | frontend | `http://localhost:8000`                                 |
 
-Frontend variables live in `frontend/.env` (git‑ignored). A minimal example:
-
-```env
-VITE_API_URL=http://localhost:8000
-VITE_BACKEND_URL=http://localhost:8000
-```
+See [`backend/.env.example`](backend/.env.example) and
+[`frontend/.env.example`](frontend/.env.example) for the full list.
 
 ---
 
